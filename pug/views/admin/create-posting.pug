@@ -1,0 +1,27 @@
+extends /default.pug
+
+block scripts
+  if !starter
+    script(src='js/create-posting.js')
+
+block view
+  .animated.fadeIn
+    .row
+      .col-lg-12.mt-4
+        .card
+          .card-header
+            i.fa.fa-edit
+            | Create posting
+          .card-body
+            .form-group
+              label(for='Compertition') Compertition
+              input#Compertition.form-control(type='text', disabled, value="FOCUS photo l.a. Winter 2019 Juried Exhibition in Los Angeles!")
+            .form-group
+              label(for='file-input') Upload the design / painting
+              input#file-input.form-control(type='file', name='file-input',accept="image/*")
+            .form-group
+              label(for='textarea-input') Quotations / stories:
+              textarea#textarea-input.form-control(name='textarea-input', rows='9', placeholder='Enter quotations, stories, etc..')
+            .form-actions
+              button.btn.btn-primary(type='submit') Create posting
+              a.btn.btn-secondary.ml-2(href="admin/upcoming-compertition.html") Cancel

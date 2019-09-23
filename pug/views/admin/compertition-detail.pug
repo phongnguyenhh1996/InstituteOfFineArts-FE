@@ -1,0 +1,48 @@
+extends /default.pug
+
+block scripts
+  if !starter
+    // Plugins and scripts required by this view
+    script(src='js/compertition-detail.js')
+
+block view
+  .animated.fadeIn
+    .row
+      .col-lg-12.mt-4
+        .card
+          .card-header
+            i.fas.fa-trophy
+            | Compertition detail
+          .card-body
+            .row
+              .col-10.d-flex
+                .p-2.border.border-primary.rounded.mr-3(style="flex-shink: 0")
+                  .compertition-item.compertition-item--avatar-img(style="background-image: url(https://www.datocms-assets.com/14866/1568806622-marco-xu-toupbco62lw-unsplash-1.jpg?fit=crop&w=560&h=480&auto=format)")
+                ul.list-unstyled.d-flex.flex-column.mb-0
+                  li.mb-auto.text-primary
+                    h5 FOCUS photo l.a. Winter 2019 Juried Exhibition in Los Angeles!
+                  li.mb-1
+                    i.fas.fa-calendar-alt.mr-2
+                    | 23 Sep'19, 12:00 AM IST - 4 Nov'19, 12:48 AM IST
+                  li.mb-1
+                    i.fas.fa-award.mr-2
+                    | 15.000.000 VND
+                  li.mb-1
+                    i.fas.fa-map-marker-alt.mr-2
+                    | Vietnam
+              .col-2.d-flex
+                .d-flex.flex-column.align-items-end.ml-auto.mb-3
+                  .badge.badge-pill.badge-success.p-2
+                    i.fas.fa-calendar-alt.mr-2
+                    | 135 DAYS LEFT
+                  .d-flex.mt-auto
+                    a.m-auto.btn.btn-danger(href="admin/create-posting.html?id=1") Join now
+            .row.mt-4
+              .col-12
+                h4 Let's see, what EV Online Quizzes is all about?
+                p Thematic online quizzes will be conducted as a teaser to actual quizzes. This will be conducted over online platforms like Facebook or Dare2Compete. This will be held in the two weeks period prior to Ensemble Valhalla. for the quizzes will be announced as and when the event approaches. Rules will be specific for each quiz and will be announced right before the commencement of the quiz. Prizes will be announced soon, can be in cash or in kind.
+
+
+
+
+

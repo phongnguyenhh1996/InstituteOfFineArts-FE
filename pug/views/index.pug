@@ -1,10 +1,10 @@
 extends /default.pug
 
 block defaultBody
-  body.app.header-fixed.sidebar-fixed.aside-menu-fixed.sidebar-lg-show
+  body.app.animated.fadeIn
     .app-body
       main(style="flex-grow: 1")
-        .container-fluid.header-fixed
+        .container-fluid.header-fixed-custom
           block view
             nav.navbar.navbar-expand-lg.navbar-dark.bg-danger(style="background-color: #e45151 !important")
               a.navbar-brand.font-weight-bold(href='#')
@@ -16,11 +16,41 @@ block defaultBody
                 ul.navbar-nav.mr-auto
                   li.nav-item.active
                     a.nav-link(href='#')
-                      | Home
+                      | Awards
                       span.sr-only (current)
                   li.nav-item
-                    a.nav-link(href='#') Link
-                form.form-inline.my-2.my-lg-0
-                  input.form-control.mr-sm-2(type='search' placeholder='Search' aria-label='Search')
-                  button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search
+                    a.nav-link(href='#') Nominees
+                  li.nav-item
+                    a.nav-link(href='#') Profiles
+                ul.list-inline.my-auto
+                  li.list-inline-item
+                    i.fab.fa-twitter
+                  li.list-inline-item
+                    i.fab.fa-facebook-f
+                  li.list-inline-item
+                    i.fab.fa-pinterest-p
+                a.p-2.text-white.ml-3.font-weight-bold(href='admin/login.html', style="background-color: #d34747") LOGIN
+        .container-fluid.pt-3(style="margin-top: 56px")
+          .row
+            .col-lg-8.pr-0
+              div.main-banner(style="background-image: url(https://images.unsplash.com/photo-1569058976009-e19d73690062?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80)")
+            .col-lg-4.pl-0
+              .bg-white.px-4.py-3.h-100
+                ul.list-unstyled.mb-4
+                  each val in ['DESIGN', 'FUNCTIONALITY', 'USABILITY', 'CONTENT', 'SCORE']
+                    li.d-flex.mb-2(style="background-color: #faf9f8")
+                      span.p-2.mr-auto=val
+                      if val === 'SCORE'
+                        span.p-2.text-white(style="background-color: #e45151") 7.9
+                      else
+                        span.p-2.bg-dark 7.9
+                h3 THINK Festival 2019
+                p.mb-4(style="color: #666") THINK Festival is one of the largest electronic music events in central Germany and draws thousands of music lovers to a lovely lake in the south of Leipzig once a year.
+                div.d-flex
+                  div.user-img.mr-3(style="background-image: url(https://images.unsplash.com/photo-1509384698014-34bc2fbdc0f0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=342&q=80)")
+                  div.d-flex.flex-column.justify-content-center
+                    | By
+                    a.d-block(href="#") Niccolò Miranda
+                    a(href="#") Italy
+
     include ../partials/scripts.pug

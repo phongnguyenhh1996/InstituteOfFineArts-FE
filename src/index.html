@@ -22,11 +22,15 @@
     <link href="node_modules/flag-icon-css/css/flag-icon.min.css" rel="stylesheet">
     <link href="node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="node_modules/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="node_modules/@chenfengyuan/datepicker/dist/datepicker.min.css">
     <!-- Main styles for this application-->
     <link href="css/style.css" rel="stylesheet">
     <link href="vendors/pace-progress/css/pace.min.css" rel="stylesheet">
-    <!-- Global site tag (gtag.js) - Google Analytics-->
+    <!--Google Font-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700,900&amp;display=swap" rel="stylesheet">
+    <!--Font Awesome-->
     <script src="https://kit.fontawesome.com/a560f65287.js" crossorigin="anonymous"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics-->
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -41,23 +45,54 @@
       gtag('config', 'UA-118965717-5');
     </script>
   </head>
-  <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
+  <body class="app animated fadeIn">
     <div class="app-body">
       <main style="flex-grow: 1">
-        <div class="container-fluid header-fixed">
+        <div class="container-fluid header-fixed-custom">
           <nav class="navbar navbar-expand-lg navbar-dark bg-danger" style="background-color: #e45151 !important"><a class="navbar-brand font-weight-bold" href="#"><i class="fas fa-palette text-white pr-2"></i>Fine-Arts</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
-                <li class="nav-item active"><a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+                <li class="nav-item active"><a class="nav-link" href="#">Awards<span class="sr-only">(current)</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Nominees</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Profiles</a></li>
               </ul>
-              <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-              </form>
+              <ul class="list-inline my-auto">
+                <li class="list-inline-item"><i class="fab fa-twitter"></i></li>
+                <li class="list-inline-item"><i class="fab fa-facebook-f"></i></li>
+                <li class="list-inline-item"><i class="fab fa-pinterest-p"></i></li>
+              </ul><a class="p-2 text-white ml-3 font-weight-bold" href="admin/login.html" style="background-color: #d34747">LOGIN</a>
             </div>
           </nav>
+        </div>
+        <div class="container-fluid pt-3" style="margin-top: 56px">
+          <div class="row">
+            <div class="col-lg-8 pr-0">
+              <div class="main-banner" style="background-image: url(https://images.unsplash.com/photo-1569058976009-e19d73690062?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=967&amp;q=80)"></div>
+            </div>
+            <div class="col-lg-4 pl-0">
+              <div class="bg-white px-4 py-3 h-100">
+                <ul class="list-unstyled mb-4">
+                  <li class="d-flex mb-2" style="background-color: #faf9f8"><span class="p-2 mr-auto">DESIGN</span><span class="p-2 bg-dark">7.9</span>
+                  </li>
+                  <li class="d-flex mb-2" style="background-color: #faf9f8"><span class="p-2 mr-auto">FUNCTIONALITY</span><span class="p-2 bg-dark">7.9</span>
+                  </li>
+                  <li class="d-flex mb-2" style="background-color: #faf9f8"><span class="p-2 mr-auto">USABILITY</span><span class="p-2 bg-dark">7.9</span>
+                  </li>
+                  <li class="d-flex mb-2" style="background-color: #faf9f8"><span class="p-2 mr-auto">CONTENT</span><span class="p-2 bg-dark">7.9</span>
+                  </li>
+                  <li class="d-flex mb-2" style="background-color: #faf9f8"><span class="p-2 mr-auto">SCORE</span><span class="p-2 text-white" style="background-color: #e45151">7.9</span>
+                  </li>
+                </ul>
+                <h3>THINK Festival 2019</h3>
+                <p class="mb-4" style="color: #666">THINK Festival is one of the largest electronic music events in central Germany and draws thousands of music lovers to a lovely lake in the south of Leipzig once a year.</p>
+                <div class="d-flex">
+                  <div class="user-img mr-3" style="background-image: url(https://images.unsplash.com/photo-1509384698014-34bc2fbdc0f0?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=342&amp;q=80)"></div>
+                  <div class="d-flex flex-column justify-content-center">By<a class="d-block" href="#">Niccolò Miranda</a><a href="#">Italy</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </main>
     </div>
@@ -68,5 +103,8 @@
     <script src="node_modules/pace-progress/pace.min.js"></script>
     <script src="node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
     <script src="node_modules/@coreui/coreui/dist/js/coreui.min.js"></script>
+    <script src="node_modules/masonry-layout/dist/masonry.pkgd.min.js"></script>
+    <script src="node_modules/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="node_modules/@chenfengyuan/datepicker/dist/datepicker.min.js"></script>
   </body>
 </html>

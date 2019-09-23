@@ -1,0 +1,38 @@
+extends /default.pug
+
+block scripts
+  if !starter
+    script(src='js/create-user.js')
+
+block view
+  .animated.fadeIn
+    .row
+      .col-lg-12.mt-4
+        .card
+          .card-header
+            i.fa.fa-edit
+            | Add user
+          .card-body
+            .form-group
+              label(for='username') Username
+              input#username.form-control(type='text', placeholder='Enter username')
+            .form-group
+              label(for='password') Password
+              input#password.form-control(type='text', placeholder='Enter password')
+            .form-group
+              label(for='select1') Role
+              select#select1.form-control(name='select1')
+                  option(value='0') Please select
+                  option(value='1') Admin
+                  option(value='2') Staff
+                  option(value='3') Student
+            .row
+              .form-group.col-sm-4
+                label(for='Birthday') Birthday
+                input#Birthday.form-control(type='text', data-toggle="datepicker")
+              .form-group.col-sm-8
+                label(for='Address') Address
+                input#Address.form-control(type='text', placeholder='')
+            .form-actions
+              button.btn.btn-primary(type='submit') Add user
+              a.btn.btn-secondary.ml-2(href="admin/user-list.html") Cancel
