@@ -12,27 +12,28 @@ block view
           .card-header
             i.fa.fa-edit
             | Add user
-          .card-body
+          form#createUser.card-body
             .form-group
-              label(for='username') Username
-              input#username.form-control(type='text', placeholder='Enter username')
+              label(for='Username') Username
+              input#Username.form-control(name='Username', type='text', placeholder='Enter username')
             .form-group
-              label(for='password') Password
-              input#password.form-control(type='text', placeholder='Enter password')
+              label(for='Password') Password
+              input#Password.form-control(name='Password', type='text', placeholder='Enter password')
             .form-group
-              label(for='select1') Role
-              select#select1.form-control(name='select1')
-                  option(value='0') Please select
+              label(for='RoleId') Role
+              select#RoleId.form-control(name='RoleId')
+                  option(value='') Please select
                   option(value='1') Admin
-                  option(value='2') Staff
-                  option(value='3') Student
+                  option(value='2') Manager
+                  option(value='3') Staff
+                  option(value='4') Student
             .row
               .form-group.col-sm-4
-                label(for='Birthday') Birthday
-                input#Birthday.form-control(type='text', data-toggle="datepicker")
+                label(for='YearOfBirth') Birthday
+                input#YearOfBirth.form-control(name='YearOfBirth', type='text', data-toggle="datepicker")
               .form-group.col-sm-8
                 label(for='Address') Address
-                input#Address.form-control(type='text', placeholder='')
+                input#Address.form-control(name='Address', type='text', placeholder='')
             .form-actions
               button.btn.btn-primary(type='submit') Add user
               a.btn.btn-secondary.ml-2(href="admin/user-list.html") Cancel

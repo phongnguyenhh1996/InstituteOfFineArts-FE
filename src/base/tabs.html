@@ -59,11 +59,7 @@
         <li class="nav-item d-md-down-none"><a class="nav-link" href="#"><i class="icon-list"></i></a></li>
         <li class="nav-item d-md-down-none"><a class="nav-link" href="#"><i class="icon-location-pin"></i></a></li>
         <li class="nav-item dropdown"><a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><img class="img-avatar" src="img/avatars/6.jpg" alt="admin@bootstrapmaster.com"></a>
-          <div class="dropdown-menu dropdown-menu-right">
-            <div class="dropdown-header text-center"><strong>Account</strong></div><a class="dropdown-item" href="#"><i class="fa fa-bell-o"></i> Updates<span class="badge badge-info">42</span></a><a class="dropdown-item" href="#"><i class="fa fa-envelope-o"></i> Messages<span class="badge badge-success">42</span></a><a class="dropdown-item" href="#"><i class="fa fa-tasks"></i> Tasks<span class="badge badge-danger">42</span></a><a class="dropdown-item" href="#"><i class="fa fa-comments"></i> Comments<span class="badge badge-warning">42</span></a>
-            <div class="dropdown-header text-center"><strong>Settings</strong></div><a class="dropdown-item" href="#"><i class="fa fa-user"></i> Profile</a><a class="dropdown-item" href="#"><i class="fa fa-wrench"></i> Settings</a><a class="dropdown-item" href="#"><i class="fa fa-usd"></i> Payments<span class="badge badge-secondary">42</span></a><a class="dropdown-item" href="#"><i class="fa fa-file"></i> Projects<span class="badge badge-primary">42</span></a>
-            <div class="dropdown-divider"></div><a class="dropdown-item" href="#"><i class="fa fa-shield"></i> Lock Account</a><a class="dropdown-item" href="#"><i class="fa fa-lock"></i> Logout</a>
-          </div>
+          <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" id="userName" href="#"><i class="fas fa-user"></i></a><a class="dropdown-item" id="userRole" href="#"><i class="fas fa-user"></i></a><a class="dropdown-item" id="logout" href="#"><i class="fa fa-lock"></i> Logout</a></div>
         </li>
       </ul>
       <button class="navbar-toggler aside-menu-toggler d-md-down-none" type="button" data-toggle="aside-menu-lg-show"><span class="navbar-toggler-icon"></span></button>
@@ -73,14 +69,14 @@
       <div class="sidebar">
         <nav class="sidebar-nav">
           <ul class="nav">
-            <li class="nav-item"><a class="nav-link" href="admin/user-list.html"><i class="nav-icon fas fa-user"></i> Users</a></li>
-            <li class="nav-item"><a class="nav-link" href="admin/create-user.html"><i class="nav-icon fas fa-user-plus"></i> Add user</a></li>
-            <li class="nav-item nav-dropdown"><a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon fas fa-trophy"></i>Compertition</a>
-              <ul class="nav-dropdown-items">
+            <li class="nav-item" data-role="1,"><a class="nav-link" href="admin/user-list.html"><i class="nav-icon fas fa-user"></i> Users</a></li>
+            <li class="nav-item" data-role="1,"><a class="nav-link" href="admin/create-user.html"><i class="nav-icon fas fa-user-plus"></i> Add user</a></li>
+            <li class="nav-item nav-dropdown" data-role="3,4"><a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon fas fa-trophy"></i>Compertition</a>
+              <ul class="nav-dropdown-items" data-role="4,">
                 <li class="nav-item"><a class="nav-link" href="admin/upcoming-compertition.html"><i class="nav-icon fas fa-trophy"></i>Upcoming</a></li>
               </ul>
             </li>
-            <li class="nav-item"><a class="nav-link" href="admin/posting.html"><i class="nav-icon fas fa-pencil-ruler"></i> Posting</a></li>
+            <li class="nav-item" data-role="3, 4"><a class="nav-link" href="admin/posting.html"><i class="nav-icon fas fa-pencil-ruler"></i> Posting</a></li>
           </ul>
         </nav>
       </div>
@@ -302,4 +298,6 @@
   <script src="node_modules/masonry-layout/dist/masonry.pkgd.min.js"></script>
   <script src="node_modules/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="node_modules/@chenfengyuan/datepicker/dist/datepicker.min.js"></script>
+  <script src="node_modules/axios/dist/axios.min.js"></script>
+  <script src="js/common.js"></script>
 </html>

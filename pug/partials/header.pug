@@ -29,45 +29,11 @@ header.app-header.navbar
         a.nav-link(data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false")
           img.img-avatar(src="img/avatars/6.jpg" alt="admin@bootstrapmaster.com")
         .dropdown-menu.dropdown-menu-right
-          .dropdown-header.text-center
-            strong Account
-          a.dropdown-item(href="#")
-            i.fa.fa-bell-o
-            |  Updates
-            span.badge.badge-info 42
-          a.dropdown-item(href="#")
-            i.fa.fa-envelope-o
-            |  Messages
-            span.badge.badge-success 42
-          a.dropdown-item(href="#")
-            i.fa.fa-tasks
-            |  Tasks
-            span.badge.badge-danger 42
-          a.dropdown-item(href="#")
-            i.fa.fa-comments
-            |  Comments
-            span.badge.badge-warning 42
-          .dropdown-header.text-center
-            strong Settings
-          a.dropdown-item(href="#")
-            i.fa.fa-user
-            |  Profile
-          a.dropdown-item(href="#")
-            i.fa.fa-wrench
-            |  Settings
-          a.dropdown-item(href="#")
-            i.fa.fa-usd
-            |  Payments
-            span.badge.badge-secondary 42
-          a.dropdown-item(href="#")
-            i.fa.fa-file
-            |  Projects
-            span.badge.badge-primary 42
-          .dropdown-divider
-          a.dropdown-item(href="#")
-            i.fa.fa-shield
-            |  Lock Account
-          a.dropdown-item(href="#")
+          a#userName.dropdown-item(href="#")
+            i.fas.fa-user
+          a#userRole.dropdown-item(href="#")
+            i.fas.fa-user
+          a#logout.dropdown-item(href="#")
             i.fa.fa-lock
             |  Logout
   button.navbar-toggler.aside-menu-toggler.d-md-down-none(type="button" data-toggle="aside-menu-lg-show")

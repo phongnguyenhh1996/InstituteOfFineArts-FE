@@ -6,7 +6,7 @@ block view
       .col-md-5
         .card-group
           .card.p-4
-            form(action="admin/").card-body
+            form#loginForm.card-body
               h1.text-center.mb-4(style="color: #d34747")
                 i.fas.fa-palette.pr-2
                 | Fine-Arts
@@ -14,12 +14,16 @@ block view
                 .input-group-prepend
                   span.input-group-text
                     i.icon-user
-                input.form-control(type='text', placeholder='Username')
+                input#username.form-control(type='text', placeholder='Username')
+                .invalid-feedback
+                  | Please provide a valid informations.
               .input-group.mb-4
                 .input-group-prepend
                   span.input-group-text
                     i.icon-lock
-                input.form-control(type='password', placeholder='Password')
+                input#password.form-control(type='password', placeholder='Password')
+                .invalid-feedback
+                  | Please provide a valid informations.
               .row
                 .col-6.offset-3
                   button.btn.btn-primary.px-4(type='submit', style="background-color: #d34747; border-color: #d34747") Login
