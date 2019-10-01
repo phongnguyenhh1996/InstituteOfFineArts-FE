@@ -1,0 +1,32 @@
+extends /default.pug
+
+block scripts
+  if !starter
+    script(src='js/create-compertition.js')
+
+block view
+  .animated.fadeIn
+    .row
+      .col-lg-12.mt-4
+        .card
+          .card-header
+            i.fas.fa-trophy
+            | Add compertition
+          form#createCompertition.card-body
+            .form-group
+              label(for='CompetitionName') Compertition name
+              input#Username.form-control(name='CompetitionName', type='text')
+            .form-group
+              label(for='AwardId') Award
+              select#AwardId.form-control(name='AwardId')
+                  option(value='') Please select
+            .row
+              .form-group.col-sm-6
+                label(for='StartDate') Start date
+                input#StartDate.form-control(name='StartDate', type='text', data-toggle="datepicker")
+              .form-group.col-sm-6
+                label(for='EndDate') End date
+                input#EndDate.form-control(name='EndDate', type='text', data-toggle="datepicker")
+            .form-actions
+              button.btn.btn-primary(type='submit') Add compertition
+              a.btn.btn-secondary.ml-2(href="admin/user-list.html") Cancel

@@ -26,6 +26,7 @@
     <!-- Main styles for this application-->
     <link href="css/style.css" rel="stylesheet">
     <link href="vendors/pace-progress/css/pace.min.css" rel="stylesheet">
+    <link href="node_modules/toastr/build/toastr.min.css" rel="stylesheet">
     <!--Google Font-->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700,900&amp;display=swap" rel="stylesheet">
     <!--Font Awesome-->
@@ -72,11 +73,13 @@
             <li class="nav-item" data-role="1,"><a class="nav-link" href="admin/user-list.html"><i class="nav-icon fas fa-user"></i> Users</a></li>
             <li class="nav-item" data-role="1,"><a class="nav-link" href="admin/create-user.html"><i class="nav-icon fas fa-user-plus"></i> Add user</a></li>
             <li class="nav-item nav-dropdown" data-role="3,4"><a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon fas fa-trophy"></i>Compertition</a>
-              <ul class="nav-dropdown-items" data-role="4,">
-                <li class="nav-item"><a class="nav-link" href="admin/upcoming-compertition.html"><i class="nav-icon fas fa-trophy"></i>Upcoming</a></li>
+              <ul class="nav-dropdown-items">
+                <li class="nav-item" data-role="3, 4"><a class="nav-link" href="admin/upcoming-compertition.html"><i class="nav-icon fas fa-trophy"></i>Upcoming</a></li>
+                <li class="nav-item" data-role="3,"><a class="nav-link" href="admin/create-compertition.html"><i class="nav-icon fas fa-trophy"></i>Create compertition</a></li>
               </ul>
             </li>
             <li class="nav-item" data-role="3, 4"><a class="nav-link" href="admin/posting.html"><i class="nav-icon fas fa-pencil-ruler"></i> Posting</a></li>
+            <li class="nav-item" data-role="3"><a class="nav-link" href="admin/awards.html"><i class="nav-icon fas fa-award"></i> Awards</a></li>
           </ul>
         </nav>
       </div>
@@ -90,54 +93,12 @@
                   <div class="card-body">
                     <div class="row">
                       <div class="col-12">
-                        <div class="grid">
+                        <div class="grid" id="postingList">
                           <div class="grid-sizer col-6 col-lg-4"></div>
-                          <div class="grid-item col-6 col-lg-4">
-                            <div class="material-shadow rounded posting-item my-3"><img class="rounded-top img-fluid" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/orange-tree.jpg">
-                              <div class="posting-item__infor"><span class="badge badge-pill badge-success p-1"><i class="fas fa-star mr-1"></i>8.5 points</span><span class="badge badge-pill badge-warning p-1"><i class="fas fa-star mr-1"></i>8.5 points</span></div>
-                              <p class="bg-primary text-white rounded-bottom p-2 mb-0 font-italic"><i class="fas fa-quote-left mr-2"></i>I love you the more in that I believe you had liked me for my own sake and for nothing else.</p>
-                            </div>
-                          </div>
-                          <div class="grid-item col-6 col-lg-4 my-3">
-                            <div class="material-shadow rounded"><img class="rounded-top img-fluid" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/submerged.jpg">
-                              <p class="bg-primary text-white rounded-bottom p-2 mb-0 font-italic"><i class="fas fa-quote-left mr-2"></i>I love you the more in that I believe you had liked me for my own sake and for nothing else.</p>
-                            </div>
-                          </div>
-                          <div class="grid-item col-6 col-lg-4 my-3">
-                            <div class="material-shadow rounded"><img class="rounded-top img-fluid" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/look-out.jpg">
-                              <p class="bg-primary text-white rounded-bottom p-2 mb-0 font-italic"><i class="fas fa-quote-left mr-2"></i>I love you the more in that I believe you had liked me for my own sake and for nothing else.</p>
-                            </div>
-                          </div>
-                          <div class="grid-item col-6 col-lg-4 my-3">
-                            <div class="material-shadow rounded"><img class="rounded-top img-fluid" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/one-world-trade.jpg">
-                              <p class="bg-primary text-white rounded-bottom p-2 mb-0 font-italic"><i class="fas fa-quote-left mr-2"></i>I love you the more in that I believe you had liked me for my own sake and for nothing else.</p>
-                            </div>
-                          </div>
-                          <div class="grid-item col-6 col-lg-4 my-3">
-                            <div class="material-shadow rounded"><img class="rounded-top img-fluid" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/drizzle.jpg">
-                              <p class="bg-primary text-white rounded-bottom p-2 mb-0 font-italic"><i class="fas fa-quote-left mr-2"></i>I love you the more in that I believe you had liked me for my own sake and for nothing else.</p>
-                            </div>
-                          </div>
-                          <div class="grid-item col-6 col-lg-4 my-3">
-                            <div class="material-shadow rounded"><img class="rounded-top img-fluid" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/cat-nose.jpg">
-                              <p class="bg-primary text-white rounded-bottom p-2 mb-0 font-italic"><i class="fas fa-quote-left mr-2"></i>I love you the more in that I believe you had liked me for my own sake and for nothing else.</p>
-                            </div>
-                          </div>
-                          <div class="grid-item col-6 col-lg-4 my-3">
-                            <div class="material-shadow rounded"><img class="rounded-top img-fluid" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/contrail.jpg">
-                              <p class="bg-primary text-white rounded-bottom p-2 mb-0 font-italic"><i class="fas fa-quote-left mr-2"></i>I love you the more in that I believe you had liked me for my own sake and for nothing else.</p>
-                            </div>
-                          </div>
-                          <div class="grid-item col-6 col-lg-4 my-3">
-                            <div class="material-shadow rounded"><img class="rounded-top img-fluid" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/golden-hour.jpg">
-                              <p class="bg-primary text-white rounded-bottom p-2 mb-0 font-italic"><i class="fas fa-quote-left mr-2"></i>I love you the more in that I believe you had liked me for my own sake and for nothing else.</p>
-                            </div>
-                          </div>
-                          <div class="grid-item col-6 col-lg-4 my-3">
-                            <div class="material-shadow rounded"><img class="rounded-top img-fluid" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/flight-formation.jpg">
-                              <p class="bg-primary text-white rounded-bottom p-2 mb-0 font-italic"><i class="fas fa-quote-left mr-2"></i>I love you the more in that I believe you had liked me for my own sake and for nothing else.</p>
-                            </div>
-                          </div>
+                          <div class="grid-item col-6 col-lg-4" id="postingItem"><a class="d-block material-shadow rounded posting-item my-3" href="#"><img class="rounded-top img-fluid" id="postingImg" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/orange-tree.jpg">
+                              <div class="posting-item__infor" id="postingPointWrapper"><span class="badge badge-pill badge-success p-1"><i class="fas fa-star mr-1"></i><span id="postingPoint">8.5 points</span></span></div>
+                              <p class="bg-primary text-white rounded-bottom p-2 mb-0 font-italic"><i class="fas fa-quote-left mr-2"></i><span id="postingQuote">I love you the more in that I believe you had liked me for my own sake and for nothing else.</span></p>
+                            </a></div>
                         </div>
                       </div>
                     </div>
@@ -306,6 +267,8 @@
   <script src="node_modules/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="node_modules/@chenfengyuan/datepicker/dist/datepicker.min.js"></script>
   <script src="node_modules/axios/dist/axios.min.js"></script>
+  <script src="node_modules/toastr/build/toastr.min.js"></script>
+  <script src="node_modules/moment/min/moment.min.js"></script>
   <script src="js/common.js"></script>
   <!-- Plugins and scripts required by this view-->
   <script src="js/posting.js"></script>

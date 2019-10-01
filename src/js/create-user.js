@@ -13,7 +13,7 @@ axios.interceptors.response.use(function (response) {
 
   return Promise.reject(error);
 });
-var apiUrl = 'http://192.168.1.42:44396/'; // init datepicker
+var apiUrl = 'http://192.168.43.211:44396/'; // init datepicker
 
 $('[data-toggle="datepicker"]').datepicker(); // create user
 
@@ -43,7 +43,9 @@ $('#createUser').on('submit', function (e) {
       },
       data: data
     }).then(function (res) {
-      return console.log(res);
+      if (res && res.data) {
+        window.location.href = 'admin/user-list.html';
+      }
     });
   }
 });

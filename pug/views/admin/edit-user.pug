@@ -1,0 +1,39 @@
+extends /default.pug
+
+block scripts
+  if !starter
+    script(src='js/edit-user.js')
+
+block view
+  .animated.fadeIn
+    .row
+      .col-lg-12.mt-4
+        .card
+          .card-header
+            i.fa.fa-edit
+            | Add user
+          form#editUser.card-body
+            .form-group
+              label(for='Username') Username
+              input#Username.form-control(name='Username', type='text', placeholder='Enter username')
+            .form-group
+              label(for='Password') Password
+              input#Password.form-control(name='Password', type='text', placeholder='Enter password')
+            .form-group
+              label(for='RoleId') Role
+              select#RoleId.form-control(name='RoleId')
+                  option(value='') Please select
+                  option(value='1') Admin
+                  option(value='2') Manager
+                  option(value='3') Staff
+                  option(value='4') Student
+            .row
+              .form-group.col-sm-4
+                label(for='YearOfBirth') Birthday
+                input#YearOfBirth.form-control(name='YearOfBirth', type='text', data-toggle="datepicker")
+              .form-group.col-sm-8
+                label(for='Address') Address
+                input#Address.form-control(name='Address', type='text', placeholder='')
+            .form-actions
+              button.btn.btn-primary(type='submit') Save changes
+              a.btn.btn-secondary.ml-2(href="admin/user-list.html") Cancel

@@ -16,67 +16,15 @@ block view
           .card-body
             .row
               .col-12
-                .grid
+                #postingList.grid
                   .grid-sizer.col-6.col-lg-4
-                  .grid-item.col-6.col-lg-4
-                    .material-shadow.rounded.posting-item.my-3
-                      img.rounded-top.img-fluid(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/orange-tree.jpg')
-                      .posting-item__infor
+                  #postingItem.grid-item.col-6.col-lg-4
+                    a.d-block.material-shadow.rounded.posting-item.my-3(href="#")
+                      img#postingImg.rounded-top.img-fluid(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/orange-tree.jpg')
+                      #postingPointWrapper.posting-item__infor
                         span.badge.badge-pill.badge-success.p-1
                           i.fas.fa-star.mr-1
-                          | 8.5 points
-                        span.badge.badge-pill.badge-warning.p-1
-                          i.fas.fa-star.mr-1
-                          | 8.5 points
+                          span#postingPoint 8.5 points
                       p.bg-primary.text-white.rounded-bottom.p-2.mb-0.font-italic
                         i.fas.fa-quote-left.mr-2
-                        | I love you the more in that I believe you had liked me for my own sake and for nothing else.
-                  .grid-item.col-6.col-lg-4.my-3
-                    .material-shadow.rounded
-                      img.rounded-top.img-fluid(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/submerged.jpg')
-                      p.bg-primary.text-white.rounded-bottom.p-2.mb-0.font-italic
-                        i.fas.fa-quote-left.mr-2
-                        | I love you the more in that I believe you had liked me for my own sake and for nothing else.
-                  .grid-item.col-6.col-lg-4.my-3
-                    .material-shadow.rounded
-                      img.rounded-top.img-fluid(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/look-out.jpg')
-                      p.bg-primary.text-white.rounded-bottom.p-2.mb-0.font-italic
-                        i.fas.fa-quote-left.mr-2
-                        | I love you the more in that I believe you had liked me for my own sake and for nothing else.
-                  .grid-item.col-6.col-lg-4.my-3
-                    .material-shadow.rounded
-                      img.rounded-top.img-fluid(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/one-world-trade.jpg')
-                      p.bg-primary.text-white.rounded-bottom.p-2.mb-0.font-italic
-                        i.fas.fa-quote-left.mr-2
-                        | I love you the more in that I believe you had liked me for my own sake and for nothing else.
-                  .grid-item.col-6.col-lg-4.my-3
-                    .material-shadow.rounded
-                      img.rounded-top.img-fluid(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/drizzle.jpg')
-                      p.bg-primary.text-white.rounded-bottom.p-2.mb-0.font-italic
-                        i.fas.fa-quote-left.mr-2
-                        | I love you the more in that I believe you had liked me for my own sake and for nothing else.
-                  .grid-item.col-6.col-lg-4.my-3
-                    .material-shadow.rounded
-                      img.rounded-top.img-fluid(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/cat-nose.jpg')
-                      p.bg-primary.text-white.rounded-bottom.p-2.mb-0.font-italic
-                        i.fas.fa-quote-left.mr-2
-                        | I love you the more in that I believe you had liked me for my own sake and for nothing else.
-                  .grid-item.col-6.col-lg-4.my-3
-                    .material-shadow.rounded
-                      img.rounded-top.img-fluid(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/contrail.jpg')
-                      p.bg-primary.text-white.rounded-bottom.p-2.mb-0.font-italic
-                        i.fas.fa-quote-left.mr-2
-                        | I love you the more in that I believe you had liked me for my own sake and for nothing else.
-                  .grid-item.col-6.col-lg-4.my-3
-                    .material-shadow.rounded
-                      img.rounded-top.img-fluid(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/golden-hour.jpg')
-                      p.bg-primary.text-white.rounded-bottom.p-2.mb-0.font-italic
-                        i.fas.fa-quote-left.mr-2
-                        | I love you the more in that I believe you had liked me for my own sake and for nothing else.
-                  .grid-item.col-6.col-lg-4.my-3
-                    .material-shadow.rounded
-                      img.rounded-top.img-fluid(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/flight-formation.jpg')
-                      p.bg-primary.text-white.rounded-bottom.p-2.mb-0.font-italic
-                        i.fas.fa-quote-left.mr-2
-                        | I love you the more in that I believe you had liked me for my own sake and for nothing else.
-
+                        span#postingQuote I love you the more in that I believe you had liked me for my own sake and for nothing else.

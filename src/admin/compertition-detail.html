@@ -26,6 +26,7 @@
     <!-- Main styles for this application-->
     <link href="css/style.css" rel="stylesheet">
     <link href="vendors/pace-progress/css/pace.min.css" rel="stylesheet">
+    <link href="node_modules/toastr/build/toastr.min.css" rel="stylesheet">
     <!--Google Font-->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700,900&amp;display=swap" rel="stylesheet">
     <!--Font Awesome-->
@@ -72,11 +73,13 @@
             <li class="nav-item" data-role="1,"><a class="nav-link" href="admin/user-list.html"><i class="nav-icon fas fa-user"></i> Users</a></li>
             <li class="nav-item" data-role="1,"><a class="nav-link" href="admin/create-user.html"><i class="nav-icon fas fa-user-plus"></i> Add user</a></li>
             <li class="nav-item nav-dropdown" data-role="3,4"><a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon fas fa-trophy"></i>Compertition</a>
-              <ul class="nav-dropdown-items" data-role="4,">
-                <li class="nav-item"><a class="nav-link" href="admin/upcoming-compertition.html"><i class="nav-icon fas fa-trophy"></i>Upcoming</a></li>
+              <ul class="nav-dropdown-items">
+                <li class="nav-item" data-role="3, 4"><a class="nav-link" href="admin/upcoming-compertition.html"><i class="nav-icon fas fa-trophy"></i>Upcoming</a></li>
+                <li class="nav-item" data-role="3,"><a class="nav-link" href="admin/create-compertition.html"><i class="nav-icon fas fa-trophy"></i>Create compertition</a></li>
               </ul>
             </li>
             <li class="nav-item" data-role="3, 4"><a class="nav-link" href="admin/posting.html"><i class="nav-icon fas fa-pencil-ruler"></i> Posting</a></li>
+            <li class="nav-item" data-role="3"><a class="nav-link" href="admin/awards.html"><i class="nav-icon fas fa-award"></i> Awards</a></li>
           </ul>
         </nav>
       </div>
@@ -95,23 +98,23 @@
                         </div>
                         <ul class="list-unstyled d-flex flex-column mb-0">
                           <li class="mb-auto text-primary">
-                            <h5>FOCUS photo l.a. Winter 2019 Juried Exhibition in Los Angeles!</h5>
+                            <h5 class="compertitionName">FOCUS photo l.a. Winter 2019 Juried Exhibition in Los Angeles!</h5>
                           </li>
-                          <li class="mb-1"><i class="fas fa-calendar-alt mr-2"></i>23 Sep'19, 12:00 AM IST - 4 Nov'19, 12:48 AM IST</li>
-                          <li class="mb-1"><i class="fas fa-award mr-2"></i>15.000.000 VND</li>
+                          <li class="mb-1"><i class="fas fa-calendar-alt mr-2"></i><span id="compertitionTime">23 Sep'19, 12:00 AM IST - 4 Nov'19, 12:48 AM IST</span></li>
+                          <li class="mb-1"><i class="fas fa-award mr-2"></i><span id="compertitionAward">15.000.000 VND</span></li>
                           <li class="mb-1"><i class="fas fa-map-marker-alt mr-2"></i>Vietnam</li>
                         </ul>
                       </div>
                       <div class="col-2 d-flex">
                         <div class="d-flex flex-column align-items-end ml-auto mb-3">
-                          <div class="badge badge-pill badge-success p-2"><i class="fas fa-calendar-alt mr-2"></i>135 DAYS LEFT</div>
-                          <div class="d-flex mt-auto"><a class="m-auto btn btn-danger" href="admin/create-posting.html?id=1">Join now</a></div>
+                          <div class="badge badge-pill badge-success p-2"><i class="fas fa-calendar-alt mr-2"></i><span id="daysLeft">135 DAYS LEFT</span></div>
+                          <div class="d-flex mt-auto"><a class="m-auto btn btn-danger" id="createPosting" href="admin/create-posting.html?id=1" data-role="4">Join now</a></div>
                         </div>
                       </div>
                     </div>
                     <div class="row mt-4">
                       <div class="col-12">
-                        <h4>Let's see, what EV Online Quizzes is all about?</h4>
+                        <h4>Let's see, what&nbsp;<span class="compertitionName">EV Online Quizzes</span>&nbsp;is all about?</h4>
                         <p>Thematic online quizzes will be conducted as a teaser to actual quizzes. This will be conducted over online platforms like Facebook or Dare2Compete. This will be held in the two weeks period prior to Ensemble Valhalla. for the quizzes will be announced as and when the event approaches. Rules will be specific for each quiz and will be announced right before the commencement of the quiz. Prizes will be announced soon, can be in cash or in kind.</p>
                       </div>
                     </div>
@@ -280,6 +283,8 @@
   <script src="node_modules/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="node_modules/@chenfengyuan/datepicker/dist/datepicker.min.js"></script>
   <script src="node_modules/axios/dist/axios.min.js"></script>
+  <script src="node_modules/toastr/build/toastr.min.js"></script>
+  <script src="node_modules/moment/min/moment.min.js"></script>
   <script src="js/common.js"></script>
   <!-- Plugins and scripts required by this view-->
   <script src="js/compertition-detail.js"></script>

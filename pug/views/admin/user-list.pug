@@ -1,5 +1,9 @@
 extends /default.pug
 
+block scripts
+  if !starter
+    script(src='js/user-list.js')
+
 block view
   .animated.fadeIn
     .row
@@ -13,63 +17,19 @@ block view
               i.fas.fa-plus.mr-2
               | Add user
           .card-body
-            table.table.table-responsive-sm.table-striped
+            table#userList.table.table-responsive-sm.table-striped
               thead
                 tr
                   th Username
-                  th Date registered
+                  th Birthday
                   th Role
                   th Status
                   th(style="width: 103px")
               tbody
-                tr
+                tr#rowData
                   td Yiorgos Avraamu
                   td 2012/01/01
                   td Member
-                  td
-                    span.badge.badge-success Active
-                  td
-                    a.btn.btn-sm.btn-warning.btn-pill.text-white(href="#")
-                      i.fas.fa-user-edit
-                    a.btn.btn-sm.btn-danger.btn-pill.ml-3(href="#")
-                      i.fas.fa-trash-alt
-                tr
-                  td Avram Tarasios
-                  td 2012/02/01
-                  td Staff
-                  td
-                    span.badge.badge-danger Banned
-                  td
-                    a.btn.btn-sm.btn-warning.btn-pill.text-white(href="#")
-                      i.fas.fa-user-edit
-                    a.btn.btn-sm.btn-danger.btn-pill.ml-3(href="#")
-                      i.fas.fa-trash-alt
-                tr
-                  td Quintin Ed
-                  td 2012/02/01
-                  td Admin
-                  td
-                    span.badge.badge-secondary Inactive
-                  td
-                    a.btn.btn-sm.btn-warning.btn-pill.text-white(href="#")
-                      i.fas.fa-user-edit
-                    a.btn.btn-sm.btn-danger.btn-pill.ml-3(href="#")
-                      i.fas.fa-trash-alt
-                tr
-                  td Enéas Kwadwo
-                  td 2012/03/01
-                  td Member
-                  td
-                    span.badge.badge-warning Pending
-                  td
-                    a.btn.btn-sm.btn-warning.btn-pill.text-white(href="#", title="Edit user")
-                      i.fas.fa-user-edit
-                    a.btn.btn-sm.btn-danger.btn-pill.ml-3(href="#", title="Delete user")
-                      i.fas.fa-trash-alt
-                tr
-                  td Agapetus Tadeáš
-                  td 2012/01/21
-                  td Staff
                   td
                     span.badge.badge-success Active
                   td

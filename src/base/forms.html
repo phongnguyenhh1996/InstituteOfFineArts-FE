@@ -26,6 +26,7 @@
     <!-- Main styles for this application-->
     <link href="css/style.css" rel="stylesheet">
     <link href="vendors/pace-progress/css/pace.min.css" rel="stylesheet">
+    <link href="node_modules/toastr/build/toastr.min.css" rel="stylesheet">
     <!--Google Font-->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700,900&amp;display=swap" rel="stylesheet">
     <!--Font Awesome-->
@@ -72,11 +73,13 @@
             <li class="nav-item" data-role="1,"><a class="nav-link" href="admin/user-list.html"><i class="nav-icon fas fa-user"></i> Users</a></li>
             <li class="nav-item" data-role="1,"><a class="nav-link" href="admin/create-user.html"><i class="nav-icon fas fa-user-plus"></i> Add user</a></li>
             <li class="nav-item nav-dropdown" data-role="3,4"><a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon fas fa-trophy"></i>Compertition</a>
-              <ul class="nav-dropdown-items" data-role="4,">
-                <li class="nav-item"><a class="nav-link" href="admin/upcoming-compertition.html"><i class="nav-icon fas fa-trophy"></i>Upcoming</a></li>
+              <ul class="nav-dropdown-items">
+                <li class="nav-item" data-role="3, 4"><a class="nav-link" href="admin/upcoming-compertition.html"><i class="nav-icon fas fa-trophy"></i>Upcoming</a></li>
+                <li class="nav-item" data-role="3,"><a class="nav-link" href="admin/create-compertition.html"><i class="nav-icon fas fa-trophy"></i>Create compertition</a></li>
               </ul>
             </li>
             <li class="nav-item" data-role="3, 4"><a class="nav-link" href="admin/posting.html"><i class="nav-icon fas fa-pencil-ruler"></i> Posting</a></li>
+            <li class="nav-item" data-role="3"><a class="nav-link" href="admin/awards.html"><i class="nav-icon fas fa-award"></i> Awards</a></li>
           </ul>
         </nav>
       </div>
@@ -1153,5 +1156,7 @@
   <script src="node_modules/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="node_modules/@chenfengyuan/datepicker/dist/datepicker.min.js"></script>
   <script src="node_modules/axios/dist/axios.min.js"></script>
+  <script src="node_modules/toastr/build/toastr.min.js"></script>
+  <script src="node_modules/moment/min/moment.min.js"></script>
   <script src="js/common.js"></script>
 </html>

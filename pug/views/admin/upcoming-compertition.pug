@@ -1,5 +1,9 @@
 extends /default.pug
 
+block scripts
+  if !starter
+    script(src='js/upcoming-compertition.js')
+
 block view
   .animated.fadeIn
     .row
@@ -9,24 +13,8 @@ block view
             i.fas.fa-trophy
             | Upcomming compertition
           .card-body
-            .row
-              a.col-4.d-flex.flex-column.mb-2(href="admin/compertition-detail.html?id=1", style="text-decoration: none")
+            #awardList.row
+              a#awardItem.hide.col-4.d-flex.flex-column.mb-2(href="admin/compertition-detail.html?id=1", style="text-decoration: none; display: none")
                 .compertition-item.mb-2(style="background-image: url(https://www.datocms-assets.com/14866/1568806622-marco-xu-toupbco62lw-unsplash-1.jpg?fit=crop&w=560&h=480&auto=format)")
-                h5.text-primary FOCUS photo l.a. Winter 2019 Juried Exhibition in Los Angeles!
-                p.text-dark Compete for the chance to join the panel at the Credit Suisse Event at the 2020 World Economic Forum in Davos!
-              a.col-4.d-flex.flex-column.mb-2(href="admin/compertition-detail.html?id=1", style="text-decoration: none")
-                .compertition-item.mb-2(style="background-image: url(https://www.datocms-assets.com/14866/1568806622-marco-xu-toupbco62lw-unsplash-1.jpg?fit=crop&w=560&h=480&auto=format)")
-                h5.text-primary FOCUS photo l.a. Winter 2019 Juried Exhibition in Los Angeles!
-                p.text-dark Compete for the chance to join the panel at the Credit Suisse Event at the 2020 World Economic Forum in Davos!
-              a.col-4.d-flex.flex-column.mb-2(href="admin/compertition-detail.html?id=1", style="text-decoration: none")
-                .compertition-item.mb-2(style="background-image: url(https://www.datocms-assets.com/14866/1568806622-marco-xu-toupbco62lw-unsplash-1.jpg?fit=crop&w=560&h=480&auto=format)")
-                h5.text-primary FOCUS photo l.a. Winter 2019 Juried Exhibition in Los Angeles!
-                p.text-dark Compete for the chance to join the panel at the Credit Suisse Event at the 2020 World Economic Forum in Davos!
-              a.col-4.d-flex.flex-column.mb-2(href="admin/compertition-detail.html?id=1", style="text-decoration: none")
-                .compertition-item.mb-2(style="background-image: url(https://www.datocms-assets.com/14866/1568806622-marco-xu-toupbco62lw-unsplash-1.jpg?fit=crop&w=560&h=480&auto=format)")
-                h5.text-primary FOCUS photo l.a. Winter 2019 Juried Exhibition in Los Angeles!
-                p.text-dark Compete for the chance to join the panel at the Credit Suisse Event at the 2020 World Economic Forum in Davos!
-              a.col-4.d-flex.flex-column.mb-2(href="admin/compertition-detail.html?id=1", style="text-decoration: none")
-                .compertition-item.mb-2(style="background-image: url(https://www.datocms-assets.com/14866/1568806622-marco-xu-toupbco62lw-unsplash-1.jpg?fit=crop&w=560&h=480&auto=format)")
-                h5.text-primary FOCUS photo l.a. Winter 2019 Juried Exhibition in Los Angeles!
-                p.text-dark Compete for the chance to join the panel at the Credit Suisse Event at the 2020 World Economic Forum in Davos!
+                h5.text-primary(name="CompetitionName") FOCUS photo l.a. Winter 2019 Juried Exhibition in Los Angeles!
+                p.text-dark(name="AwardDetail") Compete for the chance to join the panel at the Credit Suisse Event at the 2020 World Economic Forum in Davos!

@@ -14,7 +14,7 @@ axios.interceptors.response.use(
     return Promise.reject(error)
   }
 )
-const apiUrl = 'http://192.168.1.42:44396/'
+const apiUrl = 'http://192.168.43.211:44396/'
 // init datepicker
 $('[data-toggle="datepicker"]').datepicker()
 // create user
@@ -43,6 +43,10 @@ $('#createUser').on('submit', (e) => {
       },
       data
     })
-      .then((res) => console.log(res))
+      .then((res) => {
+        if (res && res.data) {
+          window.location.href = 'admin/user-list.html'
+        }
+      })
   }
 })

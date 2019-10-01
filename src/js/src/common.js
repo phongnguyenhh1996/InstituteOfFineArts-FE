@@ -1,5 +1,6 @@
 import $ from 'jquery'
 import axios from 'axios'
+import toastr from 'toastr'
 const UNAUTHORIZED = 401
 axios.interceptors.response.use(
   (response) => response,
@@ -8,16 +9,17 @@ axios.interceptors.response.use(
       status
     } = error.response
     if (status === UNAUTHORIZED) {
+      localStorage.removeItem('accessToken')
       window.location.href = '/login.html'
     }
     return Promise.reject(error)
   }
 )
-const apiUrl = 'http://192.168.1.42:44396/'
+const apiUrl = 'http://192.168.43.211:44396/'
 const ROLE = {
   1: {
     roleName: 'Admin',
-    authPath: ['/admin/', '/admin/user-list.html', '/admin/create-user.html']
+    authPath: ['/admin/', '/admin/user-list.html', '/admin/create-user.html', '/admin/edit-user.html']
   },
   2: {
     roleName: 'Manager',
@@ -25,11 +27,18 @@ const ROLE = {
   },
   3: {
     roleName: 'Teacher',
-    authPath: ['/admin/']
+    authPath: ['/admin/', '/admin/create-compertition.html', '/admin/awards.html', '/admin/compertition-detail.html', '/admin/posting.html', '/admin/posting-detail.html', '/admin/upcoming-compertition.html']
   },
   4: {
     roleName: 'Student',
-    authPath: ['/admin/']
+    authPath: ['/admin/', '/admin/upcoming-compertition.html', '/admin/compertition-detail.html', '/admin/create-posting.html', '/admin/posting.html', '/admin/posting-detail.html']
+  }
+}
+// if have token, login page will redirrect to admin
+if (window.location.pathname === '/login.html') {
+  const accessToken = localStorage.getItem('accessToken')
+  if (accessToken) {
+    window.location.href = '/admin/'
   }
 }
 // auth admin page, get user infor
@@ -49,8 +58,6 @@ if (window.location.pathname.startsWith('/admin')) {
       }
     })
       .then((res) => {
-        console.log(res)
-
         // if dont have user data then logout
         if (!(res && res.data)) {
           window.location.href = '/login.html'
@@ -59,6 +66,7 @@ if (window.location.pathname.startsWith('/admin')) {
         const {
           data
         } = res
+        localStorage.setItem('me',  JSON.stringify(data))
         $('#userName').append(data.Username)
         $('#userRole').append(ROLE[data.RoleId].roleName)
         // show only matching role auth element
@@ -97,10 +105,11 @@ $('#loginForm').on('submit', (e) => {
     }).then((res) => {
       if (res && res.data && res.data.access_token) {
         localStorage.setItem('accessToken', res.data.access_token)
+        toastr.success('Login successful!')
         window.location.href = '/admin'
       }
-    }
-    )
+    })
+      .catch(() => toastr.error('Login failed!'))
   }
 })
 
@@ -108,5 +117,6 @@ $('#loginForm').on('submit', (e) => {
 $('#logout').click((e) => {
   e.preventDefault()
   localStorage.removeItem('accessToken')
+  localStorage.removeItem('me')
   window.location.href = '/login.html'
 })

@@ -1,0 +1,78 @@
+extends /default.pug
+
+block scripts
+  if !starter
+    script(src='js/posting-detail.js')
+
+block view
+  .animated.fadeIn
+    .row
+      .col-lg-12.mt-4
+        .card
+          .card-header
+            i.fas.fa-pencil-ruler
+            | Posting detail
+          .card-body
+            .row
+              .col-12
+                .rounded.posting-item
+                  img#postingImg.rounded-top.img-fluid(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/orange-tree.jpg')
+                  p.bg-primary.text-white.rounded-bottom.p-2.mb-0.font-italic
+                    i.fas.fa-quote-left.mr-2
+                    span#postingQuote I love you the more in that I believe you had liked me for my own sake and for nothing else.
+              .col-12
+                .row.mx-0.mt-3.border.border-primary.rounded
+                  .col-8.py-3.d-flex.flex-column
+                    .row
+                      .col-4
+                        p.font-weight-bold Competition name:
+                      .col-8
+                        p#competitionName.font-weight-bold FOCUS photo l.a. Winter 2019 Juried Exhibition in Los Angeles!
+                    .row
+                      .col-4
+                        p.font-weight-bold Posting by:
+                      .col-8
+                        p#postingUsername.font-weight-bold hoangphong
+                    .row
+                      .col-4
+                        p.font-weight-bold Last edited:
+                      .col-8
+                        p#postingLastEdited.font-weight-bold 21/11/2019
+                    div
+                      button.btn.btn-primary(type='button' data-toggle='modal' data-target='#exampleModal' data-role='3')
+                        | Add mark
+
+                  .col-4
+                    .bg-white.pl-4.py-3.h-100
+                      ul#postingMarkWrapper.list-unstyled.mb-0
+                        each val in ['DESIGN', 'FUNCTIONALITY', 'USABILITY', 'CONTENT', 'SCORE']
+                          li.d-flex.mb-2(style="background-color: #faf9f8")
+                            span.p-2.mr-auto=val
+                            if val === 'SCORE'
+                              span#postingMark.p-2.text-white(style="background-color: #e45151") 7.9
+                            else
+                              span.p-2.bg-dark 7.9
+    #exampleModal.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+      .modal-dialog(role='document')
+        .modal-content
+          .modal-header
+            h5#exampleModalLabel.modal-title Add mark
+            button.close(type='button' data-dismiss='modal' aria-label='Close')
+              span(aria-hidden='true') &times;
+          .modal-body
+            .row
+              .col-sm-12
+                .form-group
+                  label(for='Mark') Mark
+                  input#name.form-control(type='text', placeholder='Enter mark')
+            .row
+              .col-sm-12
+                .form-group
+                  label(for='ccnumber') Comment
+                  input#ccnumber.form-control(type='text', placeholder='Enter your comment')
+          .modal-footer
+            button.btn.btn-secondary(type='button' data-dismiss='modal') Close
+            button#addMark.btn.btn-primary(type='button') Save changes
+
+
+
